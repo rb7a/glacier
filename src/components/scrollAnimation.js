@@ -12,7 +12,7 @@ margin-left: -54px;
 position: absolute;
 z-index: 10;
 left: calc(50% - 30px);
-top: 80%;
+top: 78%;
 transform: scale(.5) ;
 
 .scroll-msg-inner {

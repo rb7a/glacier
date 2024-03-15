@@ -93,7 +93,7 @@ background-color: #000;
 text-align: center;
 border: 0;
 margin: 0;
-padding-bottom: 100px;
+padding-bottom: 200px;
 box-sizing: border-box;
 .cls-1 {
     fill: #FFFFFF;
@@ -132,14 +132,14 @@ const CenterContent = styled.div`
     justify-content: center;
     /* align-content: center; */
     /* background-color: rgba(0,0,0,0.5); */
+    margin-bottom: 20px;
 .herotext {
     display: flex;
     position: absolute;
     z-index: 2;
     opacity: .8;
-    top: 60vh;
+    top: 55vh;
     width: 100%;
-    
     justify-content: center;
     margin: 0 auto;
     p {
