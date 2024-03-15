@@ -193,11 +193,21 @@ button {
 const DisplaySection = styled.div`
 box-sizing: border-box;
 background-color: white;
-height: 955px;
+height: 760px;
 width: 100%;
 display: flex ;
 flex-direction: row;
 font-family: open-sans, visby, sans-serif;
+.sequoia-image {
+  img {
+    object-position: 42% 50%;
+  }
+}
+.tundra-image {
+  img {
+    object-position: 30% 50%;
+  }
+}
 @media(max-width: 940px){
     flex-direction: column-reverse;
     height: 100%;
@@ -617,7 +627,8 @@ const IndexPage = ({location}) => {
             </div>
         <div> 
             <StaticImage
-                src={`../images/homepageimages/sequoia.jpg`}
+                className="sequoia-image"
+                src={`../images/homepageimages/sequoia-house.jpg`}
                 alt="Sequoia Image"
                 style={{
                     height: "100%"
@@ -636,9 +647,11 @@ const IndexPage = ({location}) => {
             </div>
         <div> 
             <StaticImage
-                src={`../images/homepageimages/tundra.jpg`}
+                src={`../images/homepageimages/tundra-mud.jpg`}
+                className="tundra-image"
                 alt="Tundra Image"
                 style={{
+                    objectPosition: "center",
                     height: "100%"
                     }}
                 />  

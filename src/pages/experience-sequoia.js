@@ -36,8 +36,8 @@ const Container = styled.div`
     }
 }
 .tundraimage {
-    width: 760px;
-    height: 350px;
+    width: 1080px;
+    height: 400px;
 }
 h1 {
     margin-top: 100px;
@@ -112,7 +112,7 @@ color: white;
 /* width: 30%; */
 width: 438px;
 padding: 40px;
-margin-left: calc(58% - 256px);
+margin-left: 45.9vw;
 h2 {
     font-size: 36px;
     color: white;
@@ -182,7 +182,7 @@ background-color: rgba(0,0,0,0.8);
 color: white;
 padding: 40px;
 display: flex;
-margin: 10vh 10vw;
+margin: 0px;
 h2 {
     /* margin: 0; */
     text-align: right;

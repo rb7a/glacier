@@ -462,7 +462,7 @@ const SupportTundraPage = () => {
 
 
                 <Social>
-                <p>Follow us on  <a href="https://www.facebook.com/GlacierInt" target="_blank">Facebook</a>, <a href="https://www.instagram.com/glacier_international/" target="_blank">Instagram</a> and  <a href="https://www.youtube.com/channel/UC2CR408AOJqt5JNUFVt-nSQ/playlists" target="_blank">YouTube</a> for updates, showcases, and more information </p>
+                <p>Follow us on  <a href="https://www.facebook.com/GlacierInt" target="_blank">Facebook</a>, <a href="https://www.instagram.com/glacier_international/" target="_blank">Instagram</a> and  <a href="https://www.youtube.com/channel/UC2CR408AOJqt5JNUFVt-nSQ/playlists" target="_blank">YouTube</a> for updates, showcases, and more information.</p>
                 {/* <div>
                     <a href="https://www.instagram.com/glacier_international/" target="_blank">
                     <StaticImage

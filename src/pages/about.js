@@ -5,6 +5,8 @@ import styled from '@emotion/styled';
 import {css} from '@emotion/react';
 import { StaticImage } from "gatsby-plugin-image"
 import Layout from "../components/layout"
+import TundraImage from "../images/about/tundraAbout.png"
+import SequoiaImage from "../images/about/sequoiaAbout.png"
 
 const Container = styled.div`
 /* margin: 80px 0; */
@@ -23,7 +25,7 @@ justify-content: center;
 align-items: center;
 flex-direction: column;
 p {
-    max-width: 840px;
+    max-width: 600px;
     text-align: center;
 }
 p:last-of-type {
@@ -48,37 +50,58 @@ height: 90vh;
     flex-direction: column-reverse;
     height: auto;
     .imageclass {
-        margin: 100px 0 0 0;
+        // margin: 100px 0 0 0;
         align-self: flex-start;
         width: 90vw;
         min-height: 150px;
-        height: 50vw;
+        // height: 50vw;
     }
 }
 ` 
 const ContainerSplit2 = styled(ContainerSplit)`
 height: 70vh;
 width: 100%;
+.tundraImage {
+    background: url(${TundraImage});
+}
+.sequoiaImage {
+    background: url(${SequoiaImage});
+}
 .exHover {
+    min-height: 500px;
+    width: 100%;
+    background-size: cover;
+    background-position: center;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100%;
     /* width: 100vw; */
+    text-decoration: none;
     p {
-        position: absolute;
+        min-height: 500px;
+        max-width: unset;
+        margin: 0;
+        padding-top: 60px;
+        font-size: 26px;
+        box-sizing: border-box;
+        display: flex;
+        width: 100%;
+        height: 100%;
+        justify-content: center;
+        align-items: center;
+        // backdrop-filter: brightness(50%)!important;
+        backdrop-filter: blur(0px) brightness(50%);
         z-index: 100;
         color: white;
-        width: 50%;
         transition: .5s;
-        text-decoration: underline solid 1px rgba(255,255,255,0);
+        text-decoration: none;
     }
     transition: .5s;
     :hover {
-        filter: brightness(140%);
         cursor: pointer;
         p {
-            text-decoration: underline solid 1px white;
+            backdrop-filter: blur(10px)!important;
         }
     }
 }
@@ -102,11 +125,11 @@ display: flex;
 justify-content: center;
 padding: 10px 80px;
 flex-direction: column;
-text-align: left;
-height: 800px;
+text-align: left!important;
+// height: 800px;
 p {
     text-align: left;
-    max-width: 600px;
+    max-width: 520px;
 }
 `
     
@@ -334,28 +357,16 @@ const AboutPage = () => {
             />
             <ContainerLeft>
                 <h2>Our Craftsmanship</h2>
-                <p>Partnering with leading additive manufacturing and design specialists to produce injection moulded aesthetic components.</p>
+                <p>At Glacier International quality is at the forefront. Not only are we meticulous in meeting OEM standards, we're also partnered with leading additive manufacturing and design specialists to produce injection moulded aesthetic components.</p>
             </ContainerLeft>
         </ContainerSplit>
 
         <ContainerSplit2>
-            <Link to={"/experience-tundra"} className="exHover" >
+            <Link to={"/experience-tundra"} className="exHover tundraImage" >
                 <p>Experience Tundra</p>
-                <StaticImage
-                    className="experienceImgs"
-                    objectPosition={"50% 50%"}
-                    src={`../images/about/tundraAbout.png`}
-                    alt="Red Tundra front on"
-                />
             </Link>
-            <Link to={"/experience-sequoia"} className="exHover">
-            <p>Experience Sequoia</p>
-            <StaticImage 
-                className="experienceImgs"
-                objectPosition={"50% 50%"}
-                src={`../images/about/sequoiaAbout.png`}
-                alt="White Sequoia front on"
-            />
+            <Link to={"/experience-sequoia"} className="exHover sequoiaImage">
+                <p>Experience Sequoia</p>
             </Link>
             
         </ContainerSplit2>
