@@ -5,27 +5,7 @@ import { Link } from 'gatsby'
 
 
 const Links = styled.div`
-@media(max-width: 940px){
-    flex-direction: column-reverse;
-    justify-content: center;
-    div {
-        padding: 20px 0;
-        a {margin: 0}
-    }
-    div:last-of-type {
-        a {
-            font-size: 1.2em;
-            margin: 0;
-        }
-    }
-    div:first-of-type {
-        justify-content: space-between;
-        a {
-            font-size: .9em;
-            padding: 0;
-        }
-    }
-}
+position: relative;
 font-size: .9em;
 min-height: 70px;
 padding: 0 18px;
@@ -55,6 +35,27 @@ a {
     /* min-height: 70px; */
     font-size: 1em;
     
+}
+@media(max-width: 940px){
+    flex-direction: column-reverse;
+    justify-content: center;
+    div {
+        padding: 20px 0;
+        a {margin: 0}
+    }
+    div:last-of-type {
+        a {
+            font-size: 1.2em;
+            margin: 0;
+        }
+    }
+    div:first-of-type {
+        justify-content: space-between;
+        a {
+            font-size: .9em;
+            padding: 0;
+        }
+    }
 }
 `
 

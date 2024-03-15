@@ -31,9 +31,6 @@ div {
         cursor: pointer ;
     }
 }
-.toggle {
-    display: none;
-}
 `
 const ContentBox = styled.div`
 @media(max-width: 940px){
@@ -47,8 +44,18 @@ padding: 20px;
 background-color: white;
 border-radius: 10px;
 color: black;
+.answer {
+    display: grid;
+    grid-template-rows: 0fr;
+    overflow: hidden;
+    box-sizing: border-box;
+    justify-content: flex-start;
+    transition: .3s;
+    max-height: 500px;
+}
 .toggle {
-    display: none;
+    // display: none;
+    max-height: 0;
 }
 img {
     border-radius: 2px;
@@ -67,13 +74,14 @@ p {
 .arrow {
   height: 3px;
   width: 3px;
+  margin-right: 10px;
   border: solid black;
   border-width: 0 3px 3px 0;
   display: inline-block;
   padding: 3px;
   transform: rotate(-45deg);
   -webkit-transform: rotate(-45deg);
-  /* transition: .3s; */
+  transition: .3s;
 }
 .down {
   transform: rotate(45deg);
@@ -130,7 +138,7 @@ p {
     margin: 100px auto 0 auto;
 }
 width: 860px;
-margin: 100px 0;
+margin: 140px 0;
 text-align: center;
 h1,p, a {
     color: white;
@@ -161,7 +169,7 @@ form {
         display: flex;
         justify-content: space-between;
         label {
-            width: 45%;
+            width: 49%;
         }
         @media(max-width: 940px){
         flex-direction: column;
@@ -180,8 +188,10 @@ form {
         background-color: white;
         padding: 16px 0;
         margin: 10px 0;
+        transition: .3s;
         :hover {
             cursor: pointer;
+            background-color: #f1f1f1;
         }
     }
     .nzcheck {
@@ -217,7 +227,10 @@ const Social = styled.div`
 display: flex;
 flex-direction: row;
 justify-content: center;
-margin: 10px;
+margin: 14px;
+a {
+    color: white;
+}
 p {
     color: white;
     margin: 0;
@@ -246,7 +259,9 @@ const Content = ({question, answer,i}) => {
         <ContentBox itemscope itemprop="mainEntity" itemtype="https://schema.org/Question" onClick={() => {setToggle(!toggle)}}>
             <div key={"question " + i}>
                 <b itemProp="name"><p>{question}<span className={toggle ? "arrow" : "arrow down"}/></p></b>
-                <p itemScope itemProp="acceptedAnswer" itemType="https://schema.org/Answer" className={toggle ? "toggle" : ""}>A: {answer}</p>
+                <div className={toggle ? "answer toggle" : "answer"}>
+                    <p itemScope itemProp="acceptedAnswer" itemType="https://schema.org/Answer" >A: {answer}</p>
+                </div>
             </div>
         </ContentBox>
     )
@@ -355,10 +370,12 @@ const SupportTundraPage = () => {
                     objectFit={"cover"}
                     style={{
                     gridArea: "1/1",
-                    position: "relative",
+                    position: "fixed",
                     placeItems: "center",
                     display: "grid",
                     height: "auto",
+                    top: "-220px",
+                    width: "100%",
                     filter: "brightness(30%)"
                     }}
                     src={`../images/support/supportBG.jpg`}
@@ -439,14 +456,14 @@ const SupportTundraPage = () => {
                             data-sitekey="site_key"
                             data-callback='onSubmit'
                             data-action='submit'
-                        >Submit</button>
+                        >Send Enquiry</button>
                     </form>
                 </ContactForm>
 
 
                 <Social>
-                <p>Follow us on social media for updates, showcases, and more information </p>
-                <div>
+                <p>Follow us on  <a href="https://www.facebook.com/GlacierInt" target="_blank">Facebook</a>, <a href="https://www.instagram.com/glacier_international/" target="_blank">Instagram</a> and  <a href="https://www.youtube.com/channel/UC2CR408AOJqt5JNUFVt-nSQ/playlists" target="_blank">YouTube</a> for updates, showcases, and more information </p>
+                {/* <div>
                     <a href="https://www.instagram.com/glacier_international/" target="_blank">
                     <StaticImage
                         className="socialImgs"
@@ -471,7 +488,7 @@ const SupportTundraPage = () => {
                         alt="Facebook Logo"
                     />
                     </a>
-                </div>
+                </div> */}
                 </Social>
                 </div>
             </div>

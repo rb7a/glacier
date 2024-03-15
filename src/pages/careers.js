@@ -7,6 +7,11 @@ import {css} from '@emotion/react';
 import { StaticImage } from "gatsby-plugin-image"
 import Layout from "../components/layout"
 
+import CareerImage1 from "../images/careers/workshop.jpg"
+import CareerImage2 from "../images/careers/careers1.jpg"
+import CareerImage3 from "../images/careers/careers2.jpg"
+import CareerImage4 from "../images/careers/careers3.jpg"
+
 const GridHeroContainer = styled.div`
 display: grid;
 grid-template-columns: auto repeat(3, 30vw [col-start]) auto;
@@ -240,18 +245,34 @@ align-items: center;
             color: white;
         }
     }
+.career1 {background: url(${CareerImage1})}
+.career2 {background: url(${CareerImage2})}
+.career3 {background: url(${CareerImage3})}
+.career4 {background: url(${CareerImage4})}
 .exHover {
+    background-size: cover;
+    background-position: center;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100%;
+    height: 350px;
     width: 25%;
     transition: .5s;
-    :hover {
-        /* filter: brightness(140%); */
-        cursor: pointer;
+    overflow: clip;
+    .textBox {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 350px;
+        backdrop-filter: brightness(30%);
+        transition: .3s;
     }
-    
+    :hover {
+        cursor: pointer;
+        .textBox {
+            backdrop-filter: brightness(40%)!important;
+        }
+    }
 }
 `
 
@@ -332,58 +353,37 @@ const CareersPage = () => {
             </Container>
 
             <ContainerSplit2 id="positions">
-            <Link  className="exHover" >
+            <a href="mailto:careers@clacier.nz"  className="exHover career1" >
                 <div className="textBox">
                     <h1>Automotive Engineers</h1>
-                    <p>Do you have passion and experience working with Toyota vehicles? The skill to step up to the next level producing RHD Sequoia’s and Tundra’s? Work closely with our supportive independent certifier on our step by step process.</p>
+                    {/* <p>Do you have passion and experience working with Toyota vehicles? The skill to step up to the next level producing RHD Sequoia’s and Tundra’s? Work closely with our supportive independent certifier on our step by step process.</p> */}
                 </div>
-                <StaticImage
-                    className="experienceImgs"
-                    objectPosition={"50% 50%"}
-                    src={`../images/careers/workshop.jpg`}
-                    alt="Glacier engineer working on tundra"
-                    
-                />
-            </Link>
-            <Link  className="exHover" >
+            </a>
+            <a href="mailto:careers@clacier.nz"  className="exHover career2" >
                 <div className="textBox">
                     <h1>Auto-electrical Engineers</h1>
-                    <p>If you enjoy forward thinking, joining our wiring team will bring you job satisfaction. The re manufacturing process requires the best of the best with attention to detail and workmanship. </p>
+                    {/* <p>If you enjoy forward thinking, joining our wiring team will bring you job satisfaction. The re manufacturing process requires the best of the best with attention to detail and workmanship. </p> */}
                 </div>
-                <StaticImage
+                {/* <StaticImage
                     className="experienceImgs"
                     objectPosition={"50% 50%"}
                     src={`../images/careers/careers1.jpg`}
                     alt="Glacier engineer working on tundra"
                     
-                />
-            </Link>
-            <Link  className="exHover">
+                /> */}
+            </a>
+            <a  href="mailto:careers@clacier.nz" className="exHover career3">
             <div className="textBox">
                 <h1>Logistics officers</h1>
-                <p>The reward of arranging logistics of Sequoia’s and Tundra’s requires self motivation and professionalism as you deliver for the customers their pride and joy from the heart of Texas. </p>
+                {/* <p>The reward of arranging logistics of Sequoia’s and Tundra’s requires self motivation and professionalism as you deliver for the customers their pride and joy from the heart of Texas. </p> */}
             </div>
-            <StaticImage 
-                className="experienceImgs"
-                objectPosition={"50% 50%"}
-                src={`../images/careers/careers2.jpg`}
-                alt="Glacier office/yard"
-                
-            />
-            </Link>
-            <Link  className="exHover">
+            </a>
+            <a href="mailto:careers@clacier.nz"  className="exHover career4">
             <div className="textBox">
                 <h1>Product Advisors</h1>
-                <p>Passion for product creates success. The main role is enjoying the interactions with customers on their journey to select a hybrid Sequoia or Tundra that best suits their needs and style. </p>
+                {/* <p>Passion for product creates success. The main role is enjoying the interactions with customers on their journey to select a hybrid Sequoia or Tundra that best suits their needs and style. </p> */}
             </div>
-            <StaticImage 
-                className="experienceImgs"
-                objectPosition={"50% 0%"}
-                src={`../images/careers/careers3.jpg`}
-                alt="Malcom next to sold Tundra"
-                
-            />
-            </Link>
+            </a>
         </ContainerSplit2>
 
         </Layout>

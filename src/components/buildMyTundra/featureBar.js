@@ -104,7 +104,7 @@ export default function FeatureBar ({grades, activeGrade, activeColor, updateAct
 
     return(
         <CenterLeft>
-                <h1>2023 Toyota Tundra</h1>
+                <h1>2024 Toyota Tundra</h1>
                 <div className="features">
                     <div><h2>325kw</h2><p>i-FORCE MAX Engine</p></div>
                     <div><h2>790nm</h2><p>Torque</p></div>

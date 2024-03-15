@@ -5,14 +5,16 @@ const Center = styled.div`
 display: flex;
 position: fixed;
 top: calc(50vh - 20vh);
-left: calc(35vw - 20vw);
-width: 40vw;
+left: calc(35vw - 30vw);
+width: 60vw;
 height: 40vh;
 justify-content: center;
 flex-direction: column;
 align-items: center;
 .mainImg {
     border-radius: 10px;
+    // width: 100%;
+    max-width: 60vw;
 }
 .buttons {
     position: absolute;
@@ -87,6 +89,7 @@ align-items: center;
     position: relative;
     img {
         width: 100%;
+        max-width: 100%!important;
     }
     .buttons {
         margin-bottom: 20px;
