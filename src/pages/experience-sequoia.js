@@ -280,8 +280,8 @@ const ExperienceTundraPage = () => {
     return(
         <Layout title="Experience Sequoia | Glacier International">
             <Helmet>
-                <title>Experience 2023 Toyota Sequoia | New Toyota Hybrid SUV</title>
-                <meta name='description' content='2023 Toyota Sequoia is ideal hybrid SUV for luxury design, strength, and efficiency. Available for pre-order in NZ. Experience Toyota Sequoia Today!' />
+                <title>Experience 2024 Toyota Sequoia | New Toyota Hybrid SUV</title>
+                <meta name='description' content='2024 Toyota Sequoia is ideal hybrid SUV for luxury design, strength, and efficiency. Available for pre-order in NZ. Experience Toyota Sequoia Today!' />
             </Helmet>
         {/* hero/video */}
              <div style={{ display: "grid", maxHeight: "100vh"}} id="homeSection">
@@ -308,7 +308,7 @@ const ExperienceTundraPage = () => {
                     >
                         <Container>
                         <h1>EXPERIENCE SEQUOIA</h1>
-                        <p>"The all-new 2023 Sequoia is the ultimate hybrid SUV for luxury aesthetics, power, and efficiency."</p>
+                        <p>"The all-new 2024 Sequoia is the ultimate hybrid SUV for luxury aesthetics, power, and efficiency."</p>
                         <iframe src="https://www.youtube.com/embed/P4I_Pus8Xc8?list=PLuYwryiueK-6dsfdxI1lQmeOX8mLf_9G0" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen" allowFullscreen></iframe>
                         </Container>
                 </div>
@@ -354,7 +354,7 @@ const ExperienceTundraPage = () => {
                 <div className="premText">
                         <Container3>
                         <h2>A True Performance Hybrid</h2>
-                        <p>The Sequoia's impressive engine comes with 325kW and 790Nm of torque. With the Sequoia's Hybrid engine, quality is never compromised.  The outstanding tow capacity of the 2023 Sequoia means there is no limit to the possibility of new adventures. Choose from 5 grades hosting a plethora of benefits based on your priorities. The elegance of a city SUV, incredible off-road capabilities, power you've never known - the choice is yours - all packaged into an incredibly luxurious hybrid machine.</p>
+                        <p>The Sequoia's impressive engine comes with 325kW and 790Nm of torque. With the Sequoia's Hybrid engine, quality is never compromised.  The outstanding tow capacity of the 2024 Sequoia means there is no limit to the possibility of new adventures. Choose from 5 grades hosting a plethora of benefits based on your priorities. The elegance of a city SUV, incredible off-road capabilities, power you've never known - the choice is yours - all packaged into an incredibly luxurious hybrid machine.</p>
                         </Container3>
                 </div>
             </ExperienceContainer>
@@ -372,7 +372,7 @@ const ExperienceTundraPage = () => {
                         }}
                     >
                         <Container style={{textAlign:"center"}}>
-                        <h1>2023 Toyota Sequoia Technology</h1>
+                        <h1>2024 Toyota Sequoia Technology</h1>
                         <p>Wireless charging technology lets you place your electronics on the dock and charge them on the go. <br/>
                         Straight path assist will assist you reversing a boat, jet ski or travel trailer, making this tricky task easier than ever. <br/>
                         Simply choose your trailer size and sit back. The grand 14 inch display also means they'll never be a dull moment on longer road trip adventures.</p>

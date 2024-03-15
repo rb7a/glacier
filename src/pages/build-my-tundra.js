@@ -671,8 +671,8 @@ const IndexPage = ({display=false}) => {
   return (
         <Layout title="Build Your Tundra | Glacier International" hideFooter={true} invertNav={true}>
             <Helmet>
-                <title>Build Your 2023 Toyota Tundra| Customise Toyota Tundra in NZ</title>
-                <meta name='description' content='Experience the new 2023 Toyota Tundra, where luxury meets power. Customise your right-hand drive Toyota Tundra exclusively in NZ at Glacier International today!' />
+                <title>Build Your 2024 Toyota Tundra| Customise Toyota Tundra in NZ</title>
+                <meta name='description' content='Experience the new 2024 Toyota Tundra, where luxury meets power. Customise your right-hand drive Toyota Tundra exclusively in NZ at Glacier International today!' />
             </Helmet>
             <Main style={pageStyles}>
                 <PriceFinanceBar price={price}/>

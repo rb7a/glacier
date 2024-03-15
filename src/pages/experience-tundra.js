@@ -269,8 +269,8 @@ const ExperienceTundraPage = () => {
     return(
         <Layout title="Experience Tundra | Glacier International">
             <Helmet>
-                <title>Experience 2023 Toyota Tundra | New Right Hand Drive Tundra</title>
-                <meta name='description' content='Discover the new 2023 Toyota Tundra, the toughest, most capable, and most advanced full-size Tundra in New Zealand. Experience the new Toyota Tundra today!' />
+                <title>Experience 2024 Toyota Tundra | New Right Hand Drive Tundra</title>
+                <meta name='description' content='Discover the new 2024 Toyota Tundra, the toughest, most capable, and most advanced full-size Tundra in New Zealand. Experience the new Toyota Tundra today!' />
             </Helmet>
         {/* hero/video */}
              <div style={{ display: "grid", maxHeight: "100vh"}} id="homeSection">
@@ -297,7 +297,7 @@ const ExperienceTundraPage = () => {
                     >
                         <Container>
                         <h1>EXPERIENCE TUNDRA</h1>
-                        <p>"The all-new 2023 Tundra is the toughest, most capable, and advanced full-size truck we’ve ever seen."</p>
+                        <p>"The all-new 2024 Tundra is the toughest, most capable, and advanced full-size truck we’ve ever seen."</p>
                         <iframe src="https://www.youtube.com/embed/videoseries?list=PLuYwryiueK-4mtYgDOpM9ZEWnhqUsrHgB" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen" allowFullscreen></iframe>
                         </Container>
                 </div>
@@ -328,8 +328,8 @@ const ExperienceTundraPage = () => {
                     >
                         <Container2>
                             <h2>LUXURY MEETS POWER</h2>
-                            <p>The 2023 Tundra gives you the freedom to adventure from wharf to mountains without worry. Whether you need a boat towed cross country, a horse float to the local trail, or have the trailer loaded up for a work haul, the Tundra can handle it. </p>
-                            <p>With a towing capacity of up to 5 tonne, the 2023 Tundra has the muscle to deliver big payloads with ease and confidence.</p>
+                            <p>The 2024 Tundra gives you the freedom to adventure from wharf to mountains without worry. Whether you need a boat towed cross country, a horse float to the local trail, or have the trailer loaded up for a work haul, the Tundra can handle it. </p>
+                            <p>With a towing capacity of up to 5 tonne, the 2024 Tundra has the muscle to deliver big payloads with ease and confidence.</p>
                             <p>Put simply less worry, more fun, and all the bragging rights.</p>
                         </Container2>
                 </div>
@@ -363,7 +363,7 @@ const ExperienceTundraPage = () => {
                         }}
                     >
                         <Container>
-                        <h1>2023 TOYOTA TUNDRA</h1>
+                        <h1>2024 TOYOTA TUNDRA</h1>
                         <p>Available now for pre-order in New Zealand -  exclusively from Glacier International.</p>
                         <StaticImage
                         src={`../images/experienceTundra/LastRe.jpg`}

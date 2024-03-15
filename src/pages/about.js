@@ -280,10 +280,10 @@ const AboutPage = () => {
                 <p>
                 Glacier International was founded in 2016, is the only dedicated Tundra and Sequoia remanufacturer in New Zealand. With multiple satisfied customers Glacier International has forged a reputation for uncompromised remanufactured vehicles. 
                 </p>
-                <p>
+                {/* <p>
                 “The team at Glacier International are friendly, professional and incredibly easy to deal with -  No request was too big or small and I couldn’t be happier with the finished product. My Tundra is by far the best truck I have ever owned and will be kept in my family for years to come.” 
                 - Blake Speirs, Customer. 
-                </p>
+                </p> */}
             </Container>
             <Youtube2 style={{ display: "grid", maxHeight: 640}} id="homeSection">
             <StaticImage

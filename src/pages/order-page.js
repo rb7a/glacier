@@ -442,7 +442,7 @@ export default function OrderPage ({location}){
                 <p>Total Price: ${nf.format(order.price)} (NZD)</p>
                 <p>Deposit: ${(Number(order.price) * 0.75).toLocaleString()} (NZD)</p>
                 <hr/>
-                <p>Please enter your information below to receive your 75% deposit invoice of ${(Number(order.price) * 0.75).toLocaleString()} via email, and secure your custom Tundra build to be delivered by 4th quarter of 2023.</p>
+                <p>Please enter your information below to receive your 75% deposit invoice of ${(Number(order.price) * 0.75).toLocaleString()} via email, and secure your custom Tundra build to be delivered by 4th quarter of 2024.</p>
             </div>
             :
             <div>
@@ -454,7 +454,7 @@ export default function OrderPage ({location}){
                 <p>Total Price: $loading (NZD)</p>
                 <p>Deposit: $loading (NZD)</p>
                 <hr/>
-                <p>Please enter your information below to receive your 75% deposit invoice of $loading via email, and secure your custom Tundra build to be delivered by 4th quarter of 2023.</p>
+                <p>Please enter your information below to receive your 75% deposit invoice of $loading via email, and secure your custom Tundra build to be delivered by 4th quarter of 2024.</p>
                 <p>If you have not come from the 'build your Tundra/Sequoia' page please <Link to="/">click here</Link></p>
             </div> 
             
