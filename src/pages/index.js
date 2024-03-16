@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react"
+import React, { useEffect, useState, useRef } from "react"
 import {Helmet} from 'react-helmet'
 import Video from "../components/video"
 import GlacierVideo from "../images/TundraReelBrightSmall.mp4"
@@ -8,6 +8,7 @@ import { StaticImage } from "gatsby-plugin-image"
 import Layout from "../components/layout"
 import { Link} from 'gatsby'
 import ScrollAnimation from "../components/scrollAnimation";
+
 
 
 const pageStyles = {
@@ -65,10 +66,11 @@ body {
 }
 
 video {
-    gridArea: 1/1;
+    grid-area: 1/1;
     position: relative;
-    placeItems: center;
+    place-items: center;
     display: grid;
+    margin-top: -20px;
     object-fit: cover;
     object-position: 32%; 
     /* filter: saturate(100%); */
@@ -133,6 +135,11 @@ const CenterContent = styled.div`
     /* align-content: center; */
     /* background-color: rgba(0,0,0,0.5); */
     margin-bottom: 20px;
+  @media(max-width: 1000px){
+    .herotext {
+      top: 44vh!important;
+    }
+  }
 .herotext {
     display: flex;
     position: absolute;
@@ -321,6 +328,8 @@ const IndexPage = ({location}) => {
   } else if (isBrowser && window.innerWidth > 450) {
     HeroVideo = HeroVideo = <Video className="videoClass" videoSrcURL={GlacierVideo} videoTitle="Glacier Hero Video"/>
   }
+
+
   useEffect(() => {
     
     if (location.state && location.state.formSent && showSent.message === ""){
@@ -336,6 +345,9 @@ const IndexPage = ({location}) => {
         }, 6300);
     }
 }, [showSent.message])
+
+
+
 
   return (
     
