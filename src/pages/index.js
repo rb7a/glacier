@@ -19,6 +19,7 @@ const pageStyles = {
 const Main = styled.div`
 padding: 0;
 margin: 0;
+overflow: clip;
 color: white;
 .showSent {
     position: fixed;
@@ -29,7 +30,6 @@ color: white;
     justify-content: center;
     border-radius: 5px;
     align-items: center;
-   
     color: black;
     box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
     max-width: 500px;
@@ -64,7 +64,6 @@ body {
     margin: 0;
     padding: 0;
 }
-
 video {
     grid-area: 1/1;
     position: relative;
@@ -74,13 +73,7 @@ video {
     object-fit: cover;
     object-position: 32%; 
     /* filter: saturate(100%); */
-    height: 100vh;
-    @media(maxWidth){
-        /* object-fit: cover;
-        object-position: 32%; 
-        height: 100vw;
-        */
-    }
+    height: 104vh;
 }
 `
 
