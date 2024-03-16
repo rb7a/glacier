@@ -278,7 +278,7 @@ const ExperienceTundraPage = () => {
                             />  
     }
     return(
-        <Layout title="Experience Sequoia | Glacier International">
+        <Layout title="Experience Sequoia | Glacier International" pageLocation={"/experience-sequoia"}>
             <Helmet>
                 <title>Experience 2024 Toyota Sequoia | New Toyota Hybrid SUV</title>
                 <meta name='description' content='2024 Toyota Sequoia is ideal hybrid SUV for luxury design, strength, and efficiency. Available for pre-order in NZ. Experience Toyota Sequoia Today!' />

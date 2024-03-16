@@ -205,21 +205,7 @@ const Social = styled.div`
 @media(max-width: 940px){
     width: 90%;
     margin: 100px auto 10px auto;
-    flex-direction: column-reverse;
-    p {
-        text-align: center;
-        margin-top: 10px !important;
-    }
-    div {
-        justify-content: space-around;
-        div {
-            width: 100%;
-        }
-    }
-    a {
-        width: 100%;
-        display: flex;
-    }
+    text-align: center;
     .socialImgs {
         width: 100% !important;
     }
@@ -250,7 +236,27 @@ div {
         cursor: pointer;
     }
 }
+`
 
+const Wrapper = styled.div`
+display: grid;
+.experienceImgs{
+    grid-area: 1/1;
+    position: fixed;
+    placeItems: center;
+    display: grid;
+    height: auto;
+    top: -220px;
+    width: 100%;
+    filter: brightness(30%);
+}
+@media(max-width:900px){
+    .experienceImgs {
+        top: 0!important;
+        height: 100vh!important;
+    }
+
+}
 `
 
 const Content = ({question, answer,i}) => {
@@ -354,7 +360,7 @@ const SupportTundraPage = () => {
       })
 
     return(
-        <Layout title="Support | Glacier International" >
+        <Layout title="Support | Glacier International" pageLocation={"/support"}>
             <Helmet>
                 <title>Contact Us for all Toyota Sequoia &lt; Tundra Enquiries</title>
                 <meta name='description' content='We would love to hear from you. Message us or give us a call if you need any help with our Toyota Hybrid SUVs.' />
@@ -364,7 +370,7 @@ const SupportTundraPage = () => {
             size="invisible"
             ref={reRef} 
             />
-            <div style={{ display: "grid"}} id="homeSection">
+            <Wrapper id="homeSection">
             <StaticImage
                     className="experienceImgs"
                     objectFit={"cover"}
@@ -492,7 +498,7 @@ const SupportTundraPage = () => {
                 </Social>
                 </div>
             </div>
-        </div>
+        </Wrapper>
         </Layout>
     )
 }

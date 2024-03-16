@@ -333,48 +333,34 @@ export default function Nav({pageLocation, invertNav}){
 
 
 
-
-    let NavigationLinks = <Links> 
-        {/* <NavLink href="/build-my-tundra" >
-            Build My Tundra
-        </NavLink> */}
-    </Links>
-    if (pageLocation === "/"){
-        NavigationLinks = (
-            <Links> 
-                <NavLink onClick={() => scrollTo("#contactSection","center")}>
-                    Build My Tundra
-                </NavLink>
-            </Links>
-        )
-    } 
+    console.log(pageLocation)
     let DrawerLinks = (
         <div css={sidebarStyles({ menuOpen })}  onClick={() => {setMenuOpen(false)}}>
-            <InsideDrawerLink to="/">
+            <InsideDrawerLink to="/" onClick={() => {if (pageLocation == "/"){setNavInverted(!navInverted)}}}>
                 Home <span className="arrow"/>
             </InsideDrawerLink>
-            <InsideDrawerLink to="/about">
+            <InsideDrawerLink to="/about" onClick={() => {if (pageLocation == "/about"){setNavInverted(!navInverted)}}}>
                 About Us <span className="arrow"/>
             </InsideDrawerLink>
             
             <InsideDrawerLink to="/careers">
                 Careers <span className="arrow"/>
             </InsideDrawerLink>
-            <InsideDrawerLink to="/support">
+            <InsideDrawerLink to="/support" onClick={() => {if (pageLocation == "/support"){setNavInverted(!navInverted)}}}>
                 Support <span className="arrow"/>
             </InsideDrawerLink>
             <NavLower>
                 <VehicleBox>
                     <StaticImage className="imageBox" src={`../images/Nav/TRDSequoia.png`} alt="White Sequoia"/>
                     <div className="buttonBox">
-                        <Button to="/experience-sequoia">Experience Sequoia</Button>
+                        <Button to="/experience-sequoia" onClick={() => {if (pageLocation == "/experience-sequoia"){setNavInverted(!navInverted)}}}>Experience Sequoia</Button>
                         <ButtonOutline to="/build-my-sequoia">Build My Sequoia</ButtonOutline>
                     </div>
                 </VehicleBox>
                 <VehicleBox>
                     <StaticImage className="imageBox" src={`../images/Nav/TRDTundra.png`} alt="White Tundra"/>
                     <div className="buttonBox">
-                        <Button to="/experience-tundra">Experience Tundra</Button>
+                        <Button to="/experience-tundra" onClick={() => {if (pageLocation == "/experience-tundra"){setNavInverted(!navInverted)}}}>Experience Tundra</Button>
                         <ButtonOutline to="/build-my-tundra">Build My Tundra</ButtonOutline>
                     </div>
                 </VehicleBox>
@@ -391,7 +377,6 @@ export default function Nav({pageLocation, invertNav}){
                 </Logo>
                 </Link>
                 <Links> 
-                    {NavigationLinks}
                     <button css={styles({ menuOpen })} onClick={() => {setMenuOpen(!menuOpen); setNavInverted(!navInverted)}} aria-label="Navigation menu toggle">
                         <span className="hamburger-box">
                             <span className={menuOpen? "hamburger-inner hamburger-inner-active" : "hamburger-inner"}></span>

@@ -202,10 +202,9 @@ z-index: 110 !important;
     max-width: 900px;
     width: 100%;
     height: 100%; 
-    top:15%;
+    top:8%;
     left: 50%;
     transform: translate(-50%, 0);
-    
 }
 
 button {
@@ -263,7 +262,7 @@ button {
 const AboutPage = () => {
     const [videoOpen, setVideoOpen] = useState(false);
     return(
-        <Layout title="About Us | Glacier International">
+        <Layout title="About Us | Glacier International" pageLocation={"/about"}>
         <Helmet>
             <title>One-Stop-Shop for Right-Hand Drive Toyota Sequoia & Tundra</title>
             <meta name='description' content='Glacier International team helps Kiwis who value reliability, performance and class to deliver the best right-hand drive Toyota Sequoia and Tundra in NZ.' />
@@ -336,7 +335,7 @@ const AboutPage = () => {
 
         
         <div css={popupStyles({ videoOpen })} >
-            <div className="dim"/>
+            <div className="dim" onClick={() => setVideoOpen(!videoOpen)}/>
             <div className="overlay">
                 {/* <button onClick={() => {setVideoOpen(!videoOpen)}}>close</button> */}
                 <button css={popupStyles({ videoOpen })} onClick={() => setVideoOpen(!videoOpen)} aria-label="Navigation menu toggle">

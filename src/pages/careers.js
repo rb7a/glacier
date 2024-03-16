@@ -144,6 +144,8 @@ const Values2 = styled.div`
         }
         h2 {
             display: block !important;
+            text-align: left;
+            width: 100%;
         }
         div {
             div {

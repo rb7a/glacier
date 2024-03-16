@@ -351,7 +351,7 @@ const IndexPage = ({location}) => {
 
   return (
     
-      <Layout title="Home | Glacier International">
+      <Layout title="Home | Glacier International" pageLocation={"/"}>
         <Helmet>
             <title>2024 Toyota Sequoia & Tundra | Right Hand Drive Hybrid SUV</title>
             <meta name='description' content='Glacier International is a one-stop shop importing Toyota Hybrid SUVs and remanufacturing right-hand drive Toyota Sequoia and Tundra models in New Zealand.' />
