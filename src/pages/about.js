@@ -7,8 +7,16 @@ import { StaticImage } from "gatsby-plugin-image"
 import Layout from "../components/layout"
 import TundraImage from "../images/about/tundraAbout.png"
 import SequoiaImage from "../images/about/sequoiaAbout.png"
+import { useRef } from "react";
+import gsap from "gsap";
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
+import { useGSAP } from "@gsap/react";
+
 
 const Container = styled.div`
+.animate-intro1, .animate-intro2, .animate-intro3, .animate-intro4 {
+    opacity: 0;
+} 
 /* margin: 80px 0; */
 /* height: calc(100vh - 440px); */
 @media(max-width: 940px){
@@ -131,6 +139,9 @@ p {
     text-align: left;
     max-width: 520px;
 }
+.animate-text1, .animate-text2 {
+opacity: 0;
+}
 `
     
 
@@ -159,6 +170,7 @@ button {
 `
 const About = styled.div`
 h1 {
+    opacity: 0;
     color: white; 
 }
 font-size: 30px;
@@ -259,10 +271,96 @@ button {
 `
 //video styles end
 
+gsap.registerPlugin(useGSAP, ScrollTrigger);
+
+
+
 const AboutPage = () => {
     const [videoOpen, setVideoOpen] = useState(false);
+    const title = useRef();
+    const text = useRef();
+    const text2 = useRef();
+    useGSAP(
+        () => {
+            gsap.to(".animate-title", {
+                y: -10,
+                opacity: 1,
+              scrollTrigger: {
+                trigger: ".animate-title",
+                start: 'top 90%',
+                end: 'bottom 50%',
+              },
+            })
+        },
+        { scope: title }
+    );
+    useGSAP(
+        () => {
+            gsap.to(".animate-intro1", {
+                y: -10,
+                opacity: 1,
+              scrollTrigger: {
+                trigger: ".animate-intro1",
+                start: 'top 90%',
+                end: 'bottom 50%',
+              },
+            })
+            gsap.to(".animate-intro2", {
+                y: -10,
+                opacity: 1,
+              scrollTrigger: {
+                trigger: ".animate-intro2",
+                start: 'top 90%',
+                end: 'bottom 50%',
+              },
+            })
+            gsap.to(".animate-intro3", {
+                y: -10,
+                opacity: 1,
+              scrollTrigger: {
+                trigger: ".animate-intro3",
+                start: 'top 90%',
+                end: 'bottom 50%',
+              },
+            })
+            gsap.to(".animate-intro4", {
+                y: -10,
+                opacity: 1,
+              scrollTrigger: {
+                trigger: ".animate-intro4",
+                start: 'top 90%',
+                end: 'bottom 50%',
+              },
+            })
+        },
+        { scope: text }
+    );
+    useGSAP(
+        () => {
+            gsap.to(".animate-text1", {
+                y: -10,
+                opacity: 1,
+              scrollTrigger: {
+                trigger: ".animate-text1",
+                start: 'top 70%',
+                end: 'bottom 50%',
+              },
+            })
+            gsap.to(".animate-text2", {
+                y: -10,
+                opacity: 1,
+              scrollTrigger: {
+                trigger: ".animate-text2",
+                start: 'top 70%',
+                end: 'bottom 50%',
+              },
+            })
+        },
+        { scope: text2 }
+    );
+
     return(
-        <Layout title="About Us | Glacier International" pageLocation={"/about"}>
+        <Layout title="About Us | Glacier International" pageLocation={"/about"} >
         <Helmet>
             <title>One-Stop-Shop for Right-Hand Drive Toyota Sequoia & Tundra</title>
             <meta name='description' content='Glacier International team helps Kiwis who value reliability, performance and class to deliver the best right-hand drive Toyota Sequoia and Tundra in NZ.' />
@@ -279,27 +377,28 @@ const AboutPage = () => {
                         display: "grid",
                     }}
             />
-            <About style={{
+            <About ref={title}
+                style={{
                     gridArea: "1/1",
                     position: "relative",
                     placeItems: "center",
                     display: "grid",
                     }}>
-                <h1>About Us</h1>
+                <h1 className="animate-title">About Us</h1>
             </About>
             
         </div>
             
-            <Container>
-                <h2>Our Story</h2>
-                <p>
+            <Container ref={text}>
+                <h2 className="animate-intro1">Our Story</h2>
+                <p className="animate-intro2">
                 The brain-child of Toyota qualified technicians, Glacier International is the only solution for discerning customers who covet our right-hand-drive Sequoia or Tundra and demand proven OEM (Original Equipment Manufacture) quality, reliability and performance.
                 </p>
-                <p>
+                <p className="animate-intro3">
                 “As a Toyota trained technician it was crucial for me to design a remanufacturing package that was indiscernible from OEM fit and finish. Our Tundra’s and Sequoia’s are guaranteed to meet or exceed our customers’ expectations.” 
                 -       Malcom King, Founder and President.   
                 </p>
-                <p>
+                <p className="animate-intro4">
                 Glacier International was founded in 2016, is the only dedicated Tundra and Sequoia remanufacturer in New Zealand. With multiple satisfied customers Glacier International has forged a reputation for uncompromised remanufactured vehicles. 
                 </p>
                 {/* <p>
@@ -347,16 +446,16 @@ const AboutPage = () => {
             </div>
         </div>  
 
-        <ContainerSplit>
+        <ContainerSplit ref={text2}>
             <StaticImage
                 src={`../images/about/AboutCraft.jpg`}
                 alt="Glacier International Workshop Polishing Tundra"
                 className="imageclass"
                 objectPosition={"50% 20%"}
             />
-            <ContainerLeft>
-                <h2>Our Craftsmanship</h2>
-                <p>At Glacier International quality is at the forefront. Not only are we meticulous in meeting OEM standards, we're also partnered with leading additive manufacturing and design specialists to produce injection moulded aesthetic components.</p>
+            <ContainerLeft >
+                <h2 className="animate-text1">Our Craftsmanship</h2>
+                <p className="animate-text2">At Glacier International quality is at the forefront. Not only are we meticulous in meeting OEM standards, we're also partnered with leading additive manufacturing and design specialists to produce injection moulded aesthetic components.</p>
             </ContainerLeft>
         </ContainerSplit>
 
