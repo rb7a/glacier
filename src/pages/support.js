@@ -1,14 +1,21 @@
-import React, {useRef, useEffect, useState} from "react"
+import React, {useEffect, useState} from "react"
 import {Helmet} from 'react-helmet'
 import styled from '@emotion/styled';
 import { StaticImage } from "gatsby-plugin-image"
 import Layout from "../components/layout"
 import { useForm } from "react-hook-form"
 import ReCAPTCHA from "react-google-recaptcha";
+import { useRef } from "react";
+import gsap from "gsap";
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
+import { useGSAP } from "@gsap/react";
 
 
 
 const Faq = styled.div`
+.animate-title {
+    opacity: 0;
+}
 @media(max-width: 940px){
     width: 80%;
     margin: 100px auto 0 auto;
@@ -33,6 +40,9 @@ div {
 }
 `
 const ContentBox = styled.div`
+.animate-question {
+    opacity: 0;
+}
 @media(max-width: 940px){
     width: 100%;
 }
@@ -246,7 +256,7 @@ display: grid;
     placeItems: center;
     display: grid;
     height: auto;
-    top: -220px;
+    top: 0;
     width: 100%;
     filter: brightness(30%);
 }
@@ -258,12 +268,13 @@ display: grid;
 
 }
 `
+gsap.registerPlugin(useGSAP, ScrollTrigger);
 
 const Content = ({question, answer,i}) => {
     const [toggle, setToggle] = useState(true);
     return (
         <ContentBox itemscope itemprop="mainEntity" itemtype="https://schema.org/Question" onClick={() => {setToggle(!toggle)}}>
-            <div key={"question " + i}>
+            <div key={"question " + i} className="animate-question">
                 <b itemProp="name"><p>{question}<span className={toggle ? "arrow" : "arrow down"}/></p></b>
                 <div className={toggle ? "answer toggle" : "answer"}>
                     <p itemScope itemProp="acceptedAnswer" itemType="https://schema.org/Answer" >A: {answer}</p>
@@ -359,6 +370,55 @@ const SupportTundraPage = () => {
           }
       })
 
+      const backgroundref = useRef();
+      const faqref = useRef();
+      useGSAP(
+          () => {
+              gsap.to(".animate-title", {
+                  duration: 2,
+                  opacity: 1,
+                scrollTrigger: {
+                  trigger: ".animate-title",
+                  start: 'top 90%',
+                  end: 'bottom 50%',
+                },
+              })
+          },
+          { scope: faqref }
+      );
+      useGSAP(
+        () => {
+          const boxes = gsap.utils.toArray('.animate-question');
+          boxes.forEach((box) => {
+            gsap.to(box, {
+                opacity: 1,
+                duration: 2,
+              scrollTrigger: {
+                trigger: box,
+                start: 'top 95%',
+                end: 'bottom 50%',
+              },
+            });
+          });
+        },
+        { scope: faqref }
+    );
+    useGSAP(
+        () => {
+            gsap.to(".animatebg", {
+                top: -220,
+              scrollTrigger: {
+                trigger: ".animatebg",
+                start: 'top 30%',
+                end: 'bottom 30%',
+                scrub: true,
+              },
+            })
+        },
+        { scope: backgroundref }
+    );
+    
+
     return(
         <Layout title="Support | Glacier International" pageLocation={"/support"}>
             <Helmet>
@@ -370,20 +430,10 @@ const SupportTundraPage = () => {
             size="invisible"
             ref={reRef} 
             />
-            <Wrapper id="homeSection">
+            <Wrapper id="homeSection" ref={backgroundref}>
             <StaticImage
-                    className="experienceImgs"
+                    className="experienceImgs animatebg"
                     objectFit={"cover"}
-                    style={{
-                    gridArea: "1/1",
-                    position: "fixed",
-                    placeItems: "center",
-                    display: "grid",
-                    height: "auto",
-                    top: "-220px",
-                    width: "100%",
-                    filter: "brightness(30%)"
-                    }}
                     src={`../images/support/supportBG.jpg`}
                     alt="Tundra front on"
                 />
@@ -397,8 +447,8 @@ const SupportTundraPage = () => {
                 >
                 <div>
                 
-                <Faq itemScope itemType="https://schema.org/FAQPage">
-                <h1>Frequently Asked Questions</h1>    
+                <Faq itemScope itemType="https://schema.org/FAQPage" ref={faqref}>
+                <h1 className="animate-title">Frequently Asked Questions</h1>    
                 {Questions.map((question, i) => (
                     <Content question={question.question} answer={question.answer} i={i}/>
                 ))}

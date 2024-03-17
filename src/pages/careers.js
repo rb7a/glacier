@@ -12,6 +12,11 @@ import CareerImage2 from "../images/careers/careers1.jpg"
 import CareerImage3 from "../images/careers/careers2.jpg"
 import CareerImage4 from "../images/careers/careers3.jpg"
 
+import { useRef } from "react";
+import gsap from "gsap";
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
+import { useGSAP } from "@gsap/react";
+
 const GridHeroContainer = styled.div`
 display: grid;
 grid-template-columns: auto repeat(3, 30vw [col-start]) auto;
@@ -29,14 +34,20 @@ max-height: 757;
     }
 }
 .img1 {
+    opacity: 0;
+    transform: translateY(45px);
     margin-top: calc(100px + 7vw);
     grid-area: 5/2;
 }
 .img2 {
+    opacity: 0;
+    transform: translateY(-30px);
     grid-area: 5/3;
     margin-top: calc(100px + 2vw);
 }
 .img3 {
+    opacity: 0;
+    transform: translateY(10px);
     grid-area: 5/4;
     margin-top: calc(100px + 6vw);
 }
@@ -71,6 +82,12 @@ const Hero = styled.div`
     position: relative;
     color: white;
     place-items: center;
+    .hero-main {
+        transform: translateY(10px); 
+    }
+    .animate-text {
+        opacity: 0;
+    }
     @media(max-width: 940px){
         /* "auto repeat(3, 30vw [col-start]) auto" */
         grid-row-start: 5;
@@ -125,6 +142,9 @@ button {
 `
 
 const Values = styled.div`
+.values-title1, .values-title2, .values-title3 {
+    opacity: 0;
+}
 @media(max-width: 940px){
     display: none;
 }
@@ -153,6 +173,7 @@ const Values2 = styled.div`
             }
         }
     }
+font-family: 'Heebo',sans-serif;
 display: flex;
 flex-direction: column;
 justify-content: center;
@@ -277,17 +298,92 @@ align-items: center;
     }
 }
 `
-
+gsap.registerPlugin(useGSAP, ScrollTrigger);
 
 
 const CareersPage = () => {
+    const heroref = useRef();
+    useGSAP(
+        () => {
+            gsap.to(".img1", {
+                duration: 2,
+                opacity: 1,
+                y: 0,
+            scrollTrigger: {
+                trigger: ".img1",
+                start: 'top 90%',
+                end: 'bottom 50%',
+            },
+            })
+            gsap.to(".img2", {
+                duration: 1.5,
+                opacity: 1,
+                y: 0,
+            })
+            gsap.to(".img3", {
+                duration: 1,
+                opacity: 1,
+                y: 0,
+            })
+            gsap.to(".hero-main", {
+                duration: 2,
+                y: 0,
+                opacity: 1,
+            })
+            gsap.to(".animate-text", {
+                delay: 0.5,
+                duration: 2.5,
+                opacity: 1,
+            })
+        },
+        { scope: heroref }
+    );
+    const valuestitleref = useRef();
+    useGSAP(
+        () => {
+            gsap.to(".values-title1", {
+                duration: 1.5,
+                opacity: 1,
+            scrollTrigger: {
+                trigger: ".values-title1",
+                start: 'top 70%',
+                end: 'bottom 50%',
+                markers: true
+            },
+            })
+            gsap.to(".values-title2", {
+                delay: .3,
+                duration: 1.5,
+                opacity: 1,
+            scrollTrigger: {
+                trigger: ".values-title2",
+                start: 'top 70%',
+                end: 'bottom 50%',
+                markers: true
+            },
+            })
+            gsap.to(".values-title3", {
+                delay: .6,
+                duration: 1.5,
+                opacity: 1,
+            scrollTrigger: {
+                trigger: ".values-title3",
+                start: 'top 70%',
+                end: 'bottom 50%',
+                markers: true
+            },
+            })
+        },
+        { scope: valuestitleref }
+    );
+
     return(
         <Layout title="Careers | Glacier International" invertNav={true}>
             <Helmet>
                 <title>Professional Careers | Join the Glacier International Team</title>
                 <meta name='description' content='We are now accepting applications for professionals to join our team and help deliver luxury Toyota Hybrid SUVs to Kiwis. Email us today.' />
             </Helmet>
-            <GridHeroContainer>
+            <GridHeroContainer ref={heroref}>
             <StaticImage
                 src={`../images/careers/workshop.jpg`}
                 alt="Tundra front on"
@@ -305,18 +401,18 @@ const CareersPage = () => {
                 className="img3"
             />
             <Hero>
-                <HeroContent>
-                <h1>Working at Glacier International</h1>
-                <p>Located at the Innovation and Technology Park at Highlands Cromwell. We are now accepting applications for Automotive professionals to join our team.</p>
-                <a href="#positions"><button >EXPLORE ROLES</button></a>
+                <HeroContent className="hero-main">
+                <h1 className="animate-text">Working at Glacier International</h1>
+                <p className="animate-text">Located at the Innovation and Technology Park at Highlands Cromwell. We are now accepting applications for Automotive professionals to join our team.</p>
+                <a  className="animate-text"href="#positions"><button >EXPLORE ROLES</button></a>
                 </HeroContent>
             </Hero>
         </GridHeroContainer>
 
-            <Values>
-                <h2>01 Freedom & Responsibility</h2>
-                <h2>02 Community</h2>
-                <h2>03 Where do I sign?</h2>
+            <Values ref={valuestitleref}>
+                <h2 className="values-title1">01 Freedom & Responsibility</h2>
+                <h2 className="values-title2">02 Community</h2>
+                <h2 className="values-title3">03 Where do I sign?</h2>
             </Values>
             <Values2>
                 <div>

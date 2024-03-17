@@ -11,6 +11,17 @@ module.exports = {
   },
   plugins: ["gatsby-plugin-emotion", "gatsby-plugin-image", "gatsby-plugin-react-helmet","gatsby-plugin-sitemap","gatsby-plugin-advanced-sitemap", 
   {
+    resolve: `gatsby-plugin-sharp`,
+    options: {
+      defaults: {
+        formats: [`auto`, `webp`],
+        placeholder: `blurred`,
+        quality: 100,
+        backgroundColor: `transparent`,
+      }
+    }
+  },
+  {
     resolve: `gatsby-plugin-canonical-urls`,
     options: {
       siteUrl: `https://glacier.nz`,
@@ -22,7 +33,7 @@ module.exports = {
     options: {
       "icon": "src/images/icon.png"
     }
-  }, "gatsby-plugin-sharp", "gatsby-transformer-sharp", {
+  }, "gatsby-transformer-sharp", {
     resolve: 'gatsby-source-filesystem',
     options: {
       "name": "images",

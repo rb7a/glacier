@@ -8,6 +8,9 @@ z-index: 10;
 left: calc(50% - 18px);
 top: 80%;
 transform: scale(0.6) ;
+.animate-text3 {
+    opacity: 0;
+}
 .scroll-msg-inner {
     width: 40px;
     height: 80px;
@@ -38,8 +41,8 @@ transform: scale(0.6) ;
 export default function ScrollAnimation(){
     return (
         <ScrollContainer>
-            <div className="scroll-msg-inner">
-                <div className="scroll-msg-wheel">
+            <div className="scroll-msg-inner animate-text3">
+                <div className="scroll-msg-wheel animate-text3">
                 </div>
             </div>
         </ScrollContainer>

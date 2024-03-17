@@ -6,6 +6,10 @@ import {css} from '@emotion/react';
 import { StaticImage } from "gatsby-plugin-image"
 import Layout from "../components/layout"
 import { Link } from "gatsby"
+import { useRef } from "react";
+import gsap from "gsap";
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
+import { useGSAP } from "@gsap/react";
 
 const Container = styled.div`
 /* margin-top: 100px; */
@@ -246,7 +250,7 @@ span {
     width: 34px;
 }
 `
-
+gsap.registerPlugin(useGSAP, ScrollTrigger);
 const isBrowser = typeof window !== "undefined";
 
 const ExperienceTundraPage = () => {

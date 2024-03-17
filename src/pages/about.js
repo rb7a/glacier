@@ -283,7 +283,7 @@ const AboutPage = () => {
     useGSAP(
         () => {
             gsap.to(".animate-title", {
-                y: -10,
+                duration: 2,
                 opacity: 1,
               scrollTrigger: {
                 trigger: ".animate-title",
@@ -297,7 +297,7 @@ const AboutPage = () => {
     useGSAP(
         () => {
             gsap.to(".animate-intro1", {
-                y: -10,
+                duration: 2,
                 opacity: 1,
               scrollTrigger: {
                 trigger: ".animate-intro1",
@@ -306,7 +306,7 @@ const AboutPage = () => {
               },
             })
             gsap.to(".animate-intro2", {
-                y: -10,
+                duration: 2,
                 opacity: 1,
               scrollTrigger: {
                 trigger: ".animate-intro2",
@@ -315,7 +315,7 @@ const AboutPage = () => {
               },
             })
             gsap.to(".animate-intro3", {
-                y: -10,
+                duration: 2,
                 opacity: 1,
               scrollTrigger: {
                 trigger: ".animate-intro3",
@@ -324,7 +324,7 @@ const AboutPage = () => {
               },
             })
             gsap.to(".animate-intro4", {
-                y: -10,
+                duration: 2,
                 opacity: 1,
               scrollTrigger: {
                 trigger: ".animate-intro4",
@@ -338,7 +338,7 @@ const AboutPage = () => {
     useGSAP(
         () => {
             gsap.to(".animate-text1", {
-                y: -10,
+                duration: 2,
                 opacity: 1,
               scrollTrigger: {
                 trigger: ".animate-text1",
@@ -347,7 +347,7 @@ const AboutPage = () => {
               },
             })
             gsap.to(".animate-text2", {
-                y: -10,
+                duration: 2,
                 opacity: 1,
               scrollTrigger: {
                 trigger: ".animate-text2",

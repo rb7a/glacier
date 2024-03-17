@@ -124,6 +124,9 @@ box-sizing: border-box;
 
 const CenterContent = styled.div`
     /* max-width: 98vw; */
+    .animate-text1, .animate-text2, animate-text3 {
+      opacity: 0;
+    }
     width: 100%;
     height: 100%;
     display: flex;
@@ -195,7 +198,7 @@ button {
 
 
 const DisplaySection = styled.div`
-.animate-text {
+.animate-text1, .animate-text2, .animate-text3, .animate-text4 {
   opacity: 0;
 }
 box-sizing: border-box;
@@ -351,33 +354,120 @@ const IndexPage = ({location}) => {
     }
 }, [showSent.message])
 
+const hero = useRef();
 const text = useRef();
 const text2 = useRef();
 useGSAP(
+  () => {
+      gsap.to(".animate-text1", {
+          duration: 2,
+          opacity: 1,
+        scrollTrigger: {
+          trigger: ".animate-text1",
+          start: 'top 70%',
+          end: 'bottom 50%',
+        },
+      })
+      gsap.to(".animate-text2", {
+        duration: 2,
+        opacity: 1,
+      scrollTrigger: {
+        trigger: ".animate-text2",
+        start: 'top 70%',
+        end: 'bottom 50%',
+        },
+      })
+      gsap.to(".animate-text3", {
+        duration: 2,
+        opacity: 1,
+      scrollTrigger: {
+        trigger: ".animate-text3",
+        start: 'top bottom',
+        end: 'bottom 50%'
+        },
+      })
+  },
+  { scope: hero }
+);
+useGSAP(
     () => {
-        gsap.to(".animate-text", {
-            y: -10,
-            opacity: .8,
+        gsap.to(".animate-text1", {
+            duration: 2,
+            opacity: 1,
           scrollTrigger: {
-            trigger: ".animate-text",
-            start: 'top 50%',
-            end: 'bottom 70%',
+            trigger: ".animate-text1",
+            start: 'top 90%',
+            end: 'bottom 50%',
           },
+        })
+        gsap.to(".animate-text2", {
+          duration: 2,
+          opacity: 1,
+          scrollTrigger: {
+            trigger: ".animate-text2",
+            start: 'top 90%',
+            end: 'bottom 50%',
+          },
+        })
+        gsap.to(".animate-text3", {
+          duration: 2,
+          opacity: 1,
+          scrollTrigger: {
+            trigger: ".animate-text3",
+            start: 'top 90%',
+            end: 'bottom 50%',
+          },
+        })
+        gsap.to(".animate-text4", {
+          duration: 2,
+          opacity: 1,
+          scrollTrigger: {
+            trigger: ".animate-text4",
+            start: 'top 90%',
+            end: 'bottom 50%',
+          }
         })
     },
     { scope: text }
 );
 useGSAP(
   () => {
-      gsap.to(".animate-text", {
-          y: -10,
-          opacity: .8,
-        scrollTrigger: {
-          trigger: ".animate-text",
-          start: 'top 50%',
-          end: 'bottom 70%',
-        },
-      })
+    gsap.to(".animate-text1", {
+      duration: 2,
+      opacity: 1,
+      scrollTrigger: {
+        trigger: ".animate-text1",
+        start: 'top 90%',
+        end: 'bottom 50%',
+      },
+    })
+    gsap.to(".animate-text2", {
+      duration: 2,
+      opacity: 1,
+      scrollTrigger: {
+        trigger: ".animate-text2",
+        start: 'top 90%',
+        end: 'bottom 50%',
+      },
+    })
+    gsap.to(".animate-text3", {
+      duration: 2,
+      opacity: 1,
+      scrollTrigger: {
+        trigger: ".animate-text3",
+        start: 'top 90%',
+        end: 'bottom 50%',
+      },
+    })
+    gsap.to(".animate-text4", {
+      duration: 2,
+      opacity: 1,
+      scrollTrigger: {
+        trigger: ".animate-text4",
+        start: 'center 90%',
+        end: 'bottom 50%',
+      }
+    })
   },
   { scope: text2 }
 );
@@ -641,21 +731,21 @@ useGSAP(
                     display: "grid",
                     }}
                 >
-                <CenterContent>
+                <CenterContent ref={hero}>
                 
                     <div>
                     <LogoOver>
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="89 0 700 194">
+                        <svg className="animate-text1" xmlns="http://www.w3.org/2000/svg" viewBox="89 0 700 194">
                             <text id="GLACIER" className="cls-1" transform="translate(436.953 118.261) scale(.8)"><tspan x="0">GLACIER</tspan></text>
                             <text id="_-_INTERNATIONAL_-" data-name="- INTERNATIONAL -" className="cls-2" transform="translate(441.978 159.767) scale(.8)"><tspan x="0">- INTERNATIONAL -</tspan></text>
                         </svg>
                     </LogoOver>
-                    <div className="herotext">
+                    <div className="herotext" >
                         {/* <button onClick={() => {setShowSent({message: "show"}); console.log("button click")}}>Test</button>  */}
-                        <p>REAL LUXURY IS EXPERIENCING THE DRIVE OF YOUR LIFE, IN UNRIVALLED SAFETY, WITH A CLEAR ENVIRONMENTAL CONSCIENCE <br/><br/>
+                        <p className="animate-text2">REAL LUXURY IS EXPERIENCING THE DRIVE OF YOUR LIFE, IN UNRIVALLED SAFETY, WITH A CLEAR ENVIRONMENTAL CONSCIENCE <br/><br/>
                             The Hybrid Sequoia & Tundra experience is something incredibly hard to quantify and we don't feel the word 'luxury' in the traditional sense really does it justice. There is luxury in the feel of the leather. There is luxury in technology. There is luxury in a powerfully smooth ride. There is luxury in unrivalled safety. Lastly there is luxury in looking after our planet, which kiwis recognise more than most.</p>
                     </div>
-                        <ScrollAnimation/>
+                        <ScrollAnimation className="animate-text3"/>
                     </div>
                 </CenterContent>
             </div>
@@ -665,11 +755,11 @@ useGSAP(
          {/* Sequioa section */}
          <DisplaySection ref={text}>
             <div style={{textAlign:"center", padding: "20px"}}>
-                <h2 className="animate-text">2024</h2>
-                <h1>2024 Toyota Hybrid Sequoia</h1>
-                <p>The ultimate luxury SUV in New Zealand. Imported, right-hand drive remanufactured, and modified to your needs, exclusively by the team at Glacier International.</p>
-                <p>With their power, comes a superior towing capacity. With their hybrid technology comes fuel efficiency with enhanced torque. With their ability to take you from the beach to the mountains, in comfort like never before, comes a new drive for adventure. The new Sequoia Hybrid is unrivalled.</p>
-                <div><Button to="/experience-sequoia">Experience Sequoia</Button><ButtonOutline to="/build-my-sequoia">Build Your Sequoia</ButtonOutline></div>
+                <h2>2024</h2>
+                <h1 className="animate-text1">2024 Toyota Hybrid Sequoia</h1>
+                <p className="animate-text2">The ultimate luxury SUV in New Zealand. Imported, right-hand drive remanufactured, and modified to your needs, exclusively by the team at Glacier International.</p>
+                <p className="animate-text3">With their power, comes a superior towing capacity. With their hybrid technology comes fuel efficiency with enhanced torque. With their ability to take you from the beach to the mountains, in comfort like never before, comes a new drive for adventure. The new Sequoia Hybrid is unrivalled.</p>
+                <div className="animate-text4"><Button to="/experience-sequoia">Experience Sequoia</Button><ButtonOutline to="/build-my-sequoia">Build Your Sequoia</ButtonOutline></div>
             </div>
         <div> 
             <StaticImage
@@ -685,11 +775,11 @@ useGSAP(
         {/* Tundra section */}
         <DisplaySection ref={text2}>
             <div style={{textAlign:"center", padding: "20px"}}>
-                <h2 className="animate-text">2024</h2>
-                <h1>2024 Toyota Hybrid Tundra</h1>
-                <p>Tough, chiselled with cutting-edge hybrid technology - the perfect truck for your off-road adventures, with an unbeatable towing capacity. Technical muscle first and foremost, the all-new Tundra has the best 4x4 capabilities of any UTE we know.</p>
-                <p>Currently the safest truck on the planet. Powered with Toyota Safety Sense 2.5, you no longer have to worry about collisions. Toyota Tundra is your feature-laden friend for long drives or family adventures.</p>
-                <div><Button to="/experience-tundra">Experience Tundra</Button><ButtonOutline to="/build-my-tundra">Build Your Tundra</ButtonOutline></div>
+                <h2>2024</h2>
+                <h1 className="animate-text1">2024 Toyota Hybrid Tundra</h1>
+                <p className="animate-text2">Tough, chiselled with cutting-edge hybrid technology - the perfect truck for your off-road adventures, with an unbeatable towing capacity. Technical muscle first and foremost, the all-new Tundra has the best 4x4 capabilities of any UTE we know.</p>
+                <p className="animate-text3">Currently the safest truck on the planet. Powered with Toyota Safety Sense 2.5, you no longer have to worry about collisions. Toyota Tundra is your feature-laden friend for long drives or family adventures.</p>
+                <div className="animate-text4"><Button to="/experience-tundra">Experience Tundra</Button><ButtonOutline to="/build-my-tundra">Build Your Tundra</ButtonOutline></div>
             </div>
         <div> 
             <StaticImage
