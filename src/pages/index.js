@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef } from "react"
+import React, { useEffect, useState } from "react"
 import {Helmet} from 'react-helmet'
 import Video from "../components/video"
 import GlacierVideo from "../images/TundraReelBrightSmall.mp4"
@@ -8,6 +8,10 @@ import { StaticImage } from "gatsby-plugin-image"
 import Layout from "../components/layout"
 import { Link} from 'gatsby'
 import ScrollAnimation from "../components/scrollAnimation";
+import { useRef } from "react";
+import gsap from "gsap";
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
+import { useGSAP } from "@gsap/react";
 
 
 
@@ -191,6 +195,9 @@ button {
 
 
 const DisplaySection = styled.div`
+.animate-text {
+  opacity: 0;
+}
 box-sizing: border-box;
 background-color: white;
 height: 760px;
@@ -313,6 +320,8 @@ const ButtonOutline = styled (Button)`
 
 const isBrowser = typeof window !== "undefined";
 
+gsap.registerPlugin(useGSAP, ScrollTrigger);
+
 const IndexPage = ({location}) => {
   const [showSent, setShowSent] = useState({message: ""});
   let HeroVideo;
@@ -339,7 +348,38 @@ const IndexPage = ({location}) => {
     }
 }, [showSent.message])
 
-
+const text = useRef();
+const text2 = useRef();
+useGSAP(
+    () => {
+        gsap.to(".animate-text", {
+            y: -10,
+            opacity: .8,
+          scrollTrigger: {
+            trigger: ".animate-text",
+            start: 'top 50%',
+            end: 'bottom 70%',
+            markers: true
+          },
+        })
+    },
+    { scope: text }
+);
+useGSAP(
+  () => {
+      gsap.to(".animate-text", {
+          y: -10,
+          opacity: .8,
+        scrollTrigger: {
+          trigger: ".animate-text",
+          start: 'top 50%',
+          end: 'bottom 70%',
+          markers: true
+        },
+      })
+  },
+  { scope: text2 }
+);
 
 
   return (
@@ -622,9 +662,9 @@ const IndexPage = ({location}) => {
        
         </Main>
          {/* Sequioa section */}
-         <DisplaySection>
+         <DisplaySection ref={text}>
             <div style={{textAlign:"center", padding: "20px"}}>
-                <h2>2024</h2>
+                <h2 className="animate-text">2024</h2>
                 <h1>2024 Toyota Hybrid Sequoia</h1>
                 <p>The ultimate luxury SUV in New Zealand. Imported, right-hand drive remanufactured, and modified to your needs, exclusively by the team at Glacier International.</p>
                 <p>With their power, comes a superior towing capacity. With their hybrid technology comes fuel efficiency with enhanced torque. With their ability to take you from the beach to the mountains, in comfort like never before, comes a new drive for adventure. The new Sequoia Hybrid is unrivalled.</p>
@@ -642,9 +682,9 @@ const IndexPage = ({location}) => {
         </div>
         </DisplaySection>
         {/* Tundra section */}
-        <DisplaySection>
+        <DisplaySection ref={text2}>
             <div style={{textAlign:"center", padding: "20px"}}>
-                <h2>2024</h2>
+                <h2 className="animate-text">2024</h2>
                 <h1>2024 Toyota Hybrid Tundra</h1>
                 <p>Tough, chiselled with cutting-edge hybrid technology - the perfect truck for your off-road adventures, with an unbeatable towing capacity. Technical muscle first and foremost, the all-new Tundra has the best 4x4 capabilities of any UTE we know.</p>
                 <p>Currently the safest truck on the planet. Powered with Toyota Safety Sense 2.5, you no longer have to worry about collisions. Toyota Tundra is your feature-laden friend for long drives or family adventures.</p>
