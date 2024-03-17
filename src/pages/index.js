@@ -249,13 +249,16 @@ div {
     h2 {
         font-family: open-sans, visby, sans-serif;
         position: absolute;
+        // font-size: 410px;
         font-size: 410px;
+        padding-top: 40px;
+        text-align: left;
         color: rgba(0,0,0,0.07);
         font-weight: 700;
         overflow: clip;
         z-index: 0;
         @media (max-width: 1800px){
-            font-size: 280px;   
+            // font-size: 280px;   
         }
     }
     p {
@@ -359,7 +362,6 @@ useGSAP(
             trigger: ".animate-text",
             start: 'top 50%',
             end: 'bottom 70%',
-            markers: true
           },
         })
     },
@@ -374,7 +376,6 @@ useGSAP(
           trigger: ".animate-text",
           start: 'top 50%',
           end: 'bottom 70%',
-          markers: true
         },
       })
   },
