@@ -57,6 +57,9 @@ max-height: 757;
 `
 
 const Container = styled.div`
+.career-title, .career-text {
+    opacity: 0;
+}
 min-height: calc(100vh - 440px);
 height: auto;
 color: black;
@@ -158,6 +161,12 @@ h2 {
 `
 
 const Values2 = styled.div`
+.value-title {
+    opacity: 0;
+}
+.value-text {
+    opacity: 0;
+}
     @media(max-width: 940px){
         span {
             display: none !important;
@@ -191,14 +200,14 @@ span {
 .verticalLine {
     height: 120px;
     /* max-height: 200px; */
-    border-left: solid rgba(0,0,0,0.5) 1px;
+    border-left: solid rgba(0,0,0,0.1) 1px;
     margin: 0;
     margin-left: 8px;
 
 }
 .horizontalLine {
     width: 150px;
-    border-top: solid rgba(0,0,0,0.5) 1px;
+    border-top: solid rgba(0,0,0,0.1) 1px;
     margin: 0;
     margin-left: 8px;
 }
@@ -216,7 +225,7 @@ div {
     margin: 40px 0;
     padding: 0 20px;
     max-width: 500px;
-    border-left: solid rgba(0,0,0, 0.5) 1px;
+    border-left: solid rgba(0,0,0, 0.1) 1px;
     }
 }
 
@@ -342,39 +351,74 @@ const CareersPage = () => {
     useGSAP(
         () => {
             gsap.to(".values-title1", {
-                duration: 1.5,
+                duration: 1,
                 opacity: 1,
             scrollTrigger: {
                 trigger: ".values-title1",
                 start: 'top 70%',
                 end: 'bottom 50%',
-                markers: true
             },
             })
             gsap.to(".values-title2", {
                 delay: .3,
-                duration: 1.5,
+                duration: 1,
                 opacity: 1,
             scrollTrigger: {
                 trigger: ".values-title2",
                 start: 'top 70%',
                 end: 'bottom 50%',
-                markers: true
             },
             })
             gsap.to(".values-title3", {
                 delay: .6,
-                duration: 1.5,
+                duration: 1,
                 opacity: 1,
             scrollTrigger: {
                 trigger: ".values-title3",
                 start: 'top 70%',
                 end: 'bottom 50%',
-                markers: true
             },
             })
         },
         { scope: valuestitleref }
+    );
+
+    const valuesref = useRef();
+    useGSAP(
+        () => {
+            const valuetitles = gsap.utils.toArray(['.value-title', ".value-text"]);
+            valuetitles.forEach((box) => {
+                gsap.to(box, {
+                    opacity: 1,
+                    duration: 1,
+                scrollTrigger: {
+                    trigger: box,
+                    start: 'top 70%',
+                    end: 'bottom 50%',
+                },
+                });
+            });
+        },
+        { scope: valuesref }
+    );
+
+    const careertitleref = useRef();
+    useGSAP(
+        () => {
+            const careertitles = gsap.utils.toArray(['.career-title', ".career-text"]);
+            careertitles.forEach((box) => {
+                gsap.to(box, {
+                    opacity: 1,
+                    duration: 1,
+                scrollTrigger: {
+                    trigger: box,
+                    start: 'top 70%',
+                    end: 'bottom 50%',
+                },
+                });
+            });
+        },
+        { scope: careertitleref }
     );
 
     return(
@@ -414,38 +458,38 @@ const CareersPage = () => {
                 <h2 className="values-title2">02 Community</h2>
                 <h2 className="values-title3">03 Where do I sign?</h2>
             </Values>
-            <Values2>
+            <Values2 ref={valuesref}>
                 <div>
                     <span>01<div className="verticalLine"/><div className="horizontalLine"/><div className="verticalLine"/></span>
                     <div>
-                        <h2>01 Freedom & Responsibility</h2>
-                        <p>"Glacier International is a growing business based in the Innovation and Technology Park at the Highlands Cromwell and we’re on the hunt for automotive professionals to join our team”.</p>
+                        <h2 className="value-title">01 Freedom & Responsibility</h2>
+                        <p className="value-text">"Glacier International is a growing business based in the Innovation and Technology Park at the Highlands Cromwell and we’re on the hunt for automotive professionals to join our team”.</p>
                     </div>
                 </div>
 
                 <div>
                     <span>02<div className="verticalLine"/><div className="horizontalLine"/><div className="verticalLine"/></span>
                     <div>
-                    <h2>02 Community</h2>
-                    <p>We are a growing, tight-knit team focused on quality. We believe the path to quality is getting the right people for the job, and doing all we can to make sure everyone's interested, happy, and excited about their work.</p>
+                    <h2 className="value-title">02 Community</h2>
+                    <p className="value-text">We are a growing, tight-knit team focused on quality. We believe the path to quality is getting the right people for the job, and doing all we can to make sure everyone's interested, happy, and excited about their work.</p>
                     </div>
                 </div>
 
                 <div>
                     <span>03<div className="verticalLine"/><div className="horizontalLine"/><div className="verticalLine last"/></span>
                     <div>
-                        <h2>03 Where do I sign?</h2>
-                        <p>"Where do I sign" is our expression for passion, enthusiasm, attention to detail, and prioritisation.</p>
-                        <p>Whether you're in the workshop, on the phone, or in the courtyard, the goal should always be to push toward a great customer experience. Our aim is always to make our customers line up, with smiles ear to ear saying "where do I sign!?"</p>
+                        <h2 className="value-title">03 Where do I sign?</h2>
+                        <p className="value-text">"Where do I sign" is our expression for passion, enthusiasm, attention to detail, and prioritisation.</p>
+                        <p className="value-text">Whether you're in the workshop, on the phone, or in the courtyard, the goal should always be to push toward a great customer experience. Our aim is always to make our customers line up, with smiles ear to ear saying "where do I sign!?"</p>
                     </div>
                 </div>
             </Values2>
-            <Container>
-                <h1>How To Apply</h1>
-                <p>
+            <Container ref={careertitleref}>
+                <h1 className="career-title">How To Apply</h1>
+                <p className="career-text">
                 At Glacier International we prioritise the customer and the team. We desire people focused, motivated team members to enhance the customer experience. 
                 </p>
-                <p>
+                <p className="career-text">
                 Email us your resume and why you want to work with us at careers@glacier.nz.  
                 </p>
             </Container>

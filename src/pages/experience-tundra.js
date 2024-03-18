@@ -12,6 +12,9 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { useGSAP } from "@gsap/react";
 
 const Container = styled.div`
+.experience {
+    opacity: 0;
+}
 /* margin-top: 100px; */
 @media(max-width: 940px){
     margin-bottom: 400px;
@@ -93,6 +96,9 @@ button {
 `
 
 const Container2 = styled.div`
+.experience {
+    opacity: 0;
+}
 @media(max-width: 940px){
     width: auto;
     p, h2 {
@@ -120,6 +126,9 @@ p {
 }
 `
 const ExperienceContainer = styled.div`
+.experience {
+    opacity: 0;
+}
 display: grid; 
 max-height: 100vh;
 @media(max-width: 940px){
@@ -162,6 +171,9 @@ max-height: 100vh;
 `
 
 const Container3 = styled.div`
+.experience {
+    opacity: 0;
+}
 @media(max-width: 940px){
     width: auto !important;
     margin: 0;
@@ -254,6 +266,81 @@ gsap.registerPlugin(useGSAP, ScrollTrigger);
 const isBrowser = typeof window !== "undefined";
 
 const ExperienceTundraPage = () => {
+    const experienceref = useRef();
+    useGSAP(
+        () => {
+            const valuetitles = gsap.utils.toArray(".experience");
+            valuetitles.forEach((box, i) => {
+                gsap.to(box, {
+                    opacity: 1,
+                    delay: 0.3* i,
+                    duration: 1.5,
+                scrollTrigger: {
+                    trigger: box,
+                    start: 'top 80%',
+                    end: 'bottom 50%',
+                },
+                });
+            });
+        },
+        { scope: experienceref }
+    );
+    const experience1 = useRef();
+    useGSAP(
+        () => {
+            const valuetitles = gsap.utils.toArray(".experience");
+            valuetitles.forEach((box, i) => {
+                gsap.to(box, {
+                    opacity: 1,
+                    delay: 0.3* i,
+                    duration: 1.5,
+                scrollTrigger: {
+                    trigger: box,
+                    start: 'top 90%',
+                    end: 'bottom 50%',
+                },
+                });
+            });
+        },
+        { scope: experience1 }
+    );
+    const experience2 = useRef();
+    useGSAP(
+        () => {
+            const valuetitles = gsap.utils.toArray(".experience");
+            valuetitles.forEach((box, i) => {
+                gsap.to(box, {
+                    opacity: 1,
+                    delay: 0.3* i,
+                    duration: 1.5,
+                scrollTrigger: {
+                    trigger: box,
+                    start: 'top 90%',
+                    end: 'bottom 50%',
+                },
+                });
+            });
+        },
+        { scope: experience2 }
+    );
+    const experience3 = useRef();
+    useGSAP(
+        () => {
+            const valuetitles = gsap.utils.toArray(".experience");
+            valuetitles.forEach((box, i) => {
+                gsap.to(box, {
+                    opacity: 1,
+                    duration: 1.5,
+                scrollTrigger: {
+                    trigger: box,
+                    start: 'top 90%',
+                    end: 'bottom 50%',
+                },
+                });
+            });
+        },
+        { scope: experience3 }
+    );
     let bottomBackground;
     if (isBrowser && window.innerWidth > 1050){
         bottomBackground =  <StaticImage
@@ -299,10 +386,10 @@ const ExperienceTundraPage = () => {
                         display: "grid",
                         }}
                     >
-                        <Container>
-                        <h1>EXPERIENCE TUNDRA</h1>
-                        <p>"The all-new 2024 Tundra is the toughest, most capable, and advanced full-size truck we’ve ever seen."</p>
-                        <iframe src="https://www.youtube.com/embed/videoseries?list=PLuYwryiueK-4mtYgDOpM9ZEWnhqUsrHgB" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen" allowFullscreen></iframe>
+                        <Container ref={experienceref}>
+                        <h1 className="experience">EXPERIENCE TUNDRA</h1>
+                        <p className="experience">"The all-new 2024 Tundra is the toughest, most capable, and advanced full-size truck we’ve ever seen."</p>
+                        <iframe className="experience" src="https://www.youtube.com/embed/videoseries?list=PLuYwryiueK-4mtYgDOpM9ZEWnhqUsrHgB" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen" allowFullscreen></iframe>
                         </Container>
                 </div>
             </div>
@@ -330,11 +417,11 @@ const ExperienceTundraPage = () => {
                         display: "grid",
                         }}
                     >
-                        <Container2>
-                            <h2>LUXURY MEETS POWER</h2>
-                            <p>The 2024 Tundra gives you the freedom to adventure from wharf to mountains without worry. Whether you need a boat towed cross country, a horse float to the local trail, or have the trailer loaded up for a work haul, the Tundra can handle it. </p>
-                            <p>With a towing capacity of up to 5 tonne, the 2024 Tundra has the muscle to deliver big payloads with ease and confidence.</p>
-                            <p>Put simply less worry, more fun, and all the bragging rights.</p>
+                        <Container2 ref={experience1}>
+                            <h2 className="experience">LUXURY MEETS POWER</h2>
+                            <p className="experience">The 2024 Tundra gives you the freedom to adventure from wharf to mountains without worry. Whether you need a boat towed cross country, a horse float to the local trail, or have the trailer loaded up for a work haul, the Tundra can handle it. </p>
+                            <p className="experience">With a towing capacity of up to 5 tonne, the 2024 Tundra has the muscle to deliver big payloads with ease and confidence.</p>
+                            <p className="experience">Put simply less worry, more fun, and all the bragging rights.</p>
                         </Container2>
                 </div>
             </div>
@@ -347,9 +434,9 @@ const ExperienceTundraPage = () => {
                         className={"sideimg"}
                     />  
                 <div className="premText">
-                        <Container3>
-                        <h2>TOUGH ON THE OUTSIDE PREMIUM ON THE INSIDE</h2>
-                        <p>Tundra’s exceptional interior stands apart with its premium materials and quality feel that both driver and passengers will enjoy</p>
+                        <Container3 ref={experience2}>
+                        <h2 className="experience">TOUGH ON THE OUTSIDE PREMIUM ON THE INSIDE</h2>
+                        <p className="experience">Tundra’s exceptional interior stands apart with its premium materials and quality feel that both driver and passengers will enjoy</p>
                         </Container3>
                 </div>
             </ExperienceContainer>
@@ -366,16 +453,16 @@ const ExperienceTundraPage = () => {
                         display: "grid",
                         }}
                     >
-                        <Container>
-                        <h1>2024 TOYOTA TUNDRA</h1>
-                        <p>Available now for pre-order in New Zealand -  exclusively from Glacier International.</p>
+                        <Container ref={experience3}>
+                        <h1 className="experience">2024 TOYOTA TUNDRA</h1>
+                        <p className="experience">Available now for pre-order in New Zealand -  exclusively from Glacier International.</p>
                         <StaticImage
                         src={`../images/experienceTundra/LastRe.jpg`}
                         alt="Glacier International Logo"
                         objectPosition={"50% 70%"}
-                        className="tundraimage"
+                        className="tundraimage experience"
                         />
-                        <div><a href="https://www.toyota.com/tundra/ebrochure/" target="_blank"><button>Tundra Brochure</button></a><Link to="/build-my-tundra"><button>Build Your Tundra</button></Link></div> 
+                        <div className="experience"><a href="https://www.toyota.com/tundra/ebrochure/" target="_blank"><button>Tundra Brochure</button></a><Link to="/build-my-tundra"><button>Build Your Tundra</button></Link></div> 
                         {/* <span/> */}
                         
                         </Container>
