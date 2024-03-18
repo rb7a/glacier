@@ -392,8 +392,8 @@ const ExperienceTundraPage = () => {
     return(
         <Layout title="Experience Sequoia | Glacier International" pageLocation={"/experience-sequoia"}>
             <Helmet>
-                <title>Experience 2024 Toyota Sequoia | New Toyota Hybrid SUV</title>
-                <meta name='description' content='2024 Toyota Sequoia is ideal hybrid SUV for luxury design, strength, and efficiency. Available for pre-order in NZ. Experience Toyota Sequoia Today!' />
+                <title>Experience 2025 Toyota Sequoia | New Toyota Hybrid SUV</title>
+                <meta name='description' content='2025 Toyota Sequoia is ideal hybrid SUV for luxury design, strength, and efficiency. Available for pre-order in NZ. Experience Toyota Sequoia Today!' />
             </Helmet>
         {/* hero/video */}
              <div style={{ display: "grid", maxHeight: "100vh"}} id="homeSection">
@@ -420,7 +420,7 @@ const ExperienceTundraPage = () => {
                     >
                         <Container ref={experienceref}>
                         <h1 className="experience-title">EXPERIENCE SEQUOIA</h1>
-                        <p className="experience-text">"The all-new 2024 Sequoia is the ultimate hybrid SUV for luxury aesthetics, power, and efficiency."</p>
+                        <p className="experience-text">"The all-new 2025 Sequoia is the ultimate hybrid SUV for luxury aesthetics, power, and efficiency."</p>
                         <iframe className="experience-text" src="https://www.youtube.com/embed/P4I_Pus8Xc8?list=PLuYwryiueK-6dsfdxI1lQmeOX8mLf_9G0" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen" allowFullscreen></iframe>
                         </Container>
                 </div>
@@ -466,7 +466,7 @@ const ExperienceTundraPage = () => {
                 <div className="premText">
                         <Container3 ref={experience3}>
                         <h2  className="experience">A True Performance Hybrid</h2>
-                        <p className="experience"> The Sequoia's impressive engine comes with 325kW and 790Nm of torque. With the Sequoia's Hybrid engine, quality is never compromised.  The outstanding tow capacity of the 2024 Sequoia means there is no limit to the possibility of new adventures. Choose from 5 grades hosting a plethora of benefits based on your priorities. The elegance of a city SUV, incredible off-road capabilities, power you've never known - the choice is yours - all packaged into an incredibly luxurious hybrid machine.</p>
+                        <p className="experience"> The Sequoia's impressive engine comes with 325kW and 790Nm of torque. With the Sequoia's Hybrid engine, quality is never compromised.  The outstanding tow capacity of the 2025 Sequoia means there is no limit to the possibility of new adventures. Choose from 5 grades hosting a plethora of benefits based on your priorities. The elegance of a city SUV, incredible off-road capabilities, power you've never known - the choice is yours - all packaged into an incredibly luxurious hybrid machine.</p>
                         </Container3>
                 </div>
             </ExperienceContainer>
@@ -484,7 +484,7 @@ const ExperienceTundraPage = () => {
                         }}
                     >
                         <Container style={{textAlign:"center"}} ref={experience4}>
-                        <h1 className="experience">2024 Toyota Sequoia Technology</h1>
+                        <h1 className="experience">2025 Toyota Sequoia Technology</h1>
                         <p className="experience">Wireless charging technology lets you place your electronics on the dock and charge them on the go. <br/>
                         Straight path assist will assist you reversing a boat, jet ski or travel trailer, making this tricky task easier than ever. <br/>
                         Simply choose your trailer size and sit back. The grand 14 inch display also means they'll never be a dull moment on longer road trip adventures.</p>

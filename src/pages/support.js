@@ -306,7 +306,7 @@ const SupportTundraPage = () => {
         {question: "Hybrid reliability", answer: "Super Reliable - if for someone bizarre reason something goes wrong, any MTA provider can fix with our support. The Hybrid Battery is rated for 400,000 km. It is not a plug in. It is self charging - More power, more torque and greater fuel efficiency."},
         {question: "Heard right hand drive coming to Aussie", answer: "Only R & D is confirmed. Sale is NOT confirmed, we will be Cheaper due to the $AUD to $NZD. IF sale was confirmed the process required to get the vehicle road legal in NZ from AU is very significant. You would be responsible for achieving compliance in NZ, along with Import Duty. LVVTA certification, Final compliance process oh yeah and no warranty from Toyota Australia or New Zealand."},
         {question: "Understand the value", answer: "The Sequoia and Tundra are leading the way in Luxury, receiving Technology even the Lexus has not received. One example is the 14’ Infotainment the other is the Safest SUV and Truck on the planet. Twice the price, but it’s twice the vehicle."},
-        {question: "Future guarantee ", answer: "If you don’t like your Sequoia or Tundra, we will trade it for a brand new 2024 model when it comes in, no cost to you. Inquire for more details."},
+        {question: "Future guarantee ", answer: "If you don’t like your Sequoia or Tundra, we will trade it for a brand new 2026 model when it comes in, no cost to you. Inquire for more details."},
         {question: "Buy back ", answer: "On a Capstone at 220k currently on sale for $265k 12month buy back, inquire for more details."},
     ] 
 

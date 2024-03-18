@@ -360,8 +360,8 @@ const ExperienceTundraPage = () => {
     return(
         <Layout title="Experience Tundra | Glacier International" pageLocation={"/experience-tundra"}>
             <Helmet>
-                <title>Experience 2024 Toyota Tundra | New Right Hand Drive Tundra</title>
-                <meta name='description' content='Discover the new 2024 Toyota Tundra, the toughest, most capable, and most advanced full-size Tundra in New Zealand. Experience the new Toyota Tundra today!' />
+                <title>Experience 2025 Toyota Tundra | New Right Hand Drive Tundra</title>
+                <meta name='description' content='Discover the new 2025 Toyota Tundra, the toughest, most capable, and most advanced full-size Tundra in New Zealand. Experience the new Toyota Tundra today!' />
             </Helmet>
         {/* hero/video */}
              <div style={{ display: "grid", maxHeight: "100vh"}} id="homeSection">
@@ -388,7 +388,7 @@ const ExperienceTundraPage = () => {
                     >
                         <Container ref={experienceref}>
                         <h1 className="experience">EXPERIENCE TUNDRA</h1>
-                        <p className="experience">"The all-new 2024 Tundra is the toughest, most capable, and advanced full-size truck we’ve ever seen."</p>
+                        <p className="experience">"The all-new 2025 Tundra is the toughest, most capable, and advanced full-size truck we’ve ever seen."</p>
                         <iframe className="experience" src="https://www.youtube.com/embed/videoseries?list=PLuYwryiueK-4mtYgDOpM9ZEWnhqUsrHgB" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen" allowFullscreen></iframe>
                         </Container>
                 </div>
@@ -419,8 +419,8 @@ const ExperienceTundraPage = () => {
                     >
                         <Container2 ref={experience1}>
                             <h2 className="experience">LUXURY MEETS POWER</h2>
-                            <p className="experience">The 2024 Tundra gives you the freedom to adventure from wharf to mountains without worry. Whether you need a boat towed cross country, a horse float to the local trail, or have the trailer loaded up for a work haul, the Tundra can handle it. </p>
-                            <p className="experience">With a towing capacity of up to 5 tonne, the 2024 Tundra has the muscle to deliver big payloads with ease and confidence.</p>
+                            <p className="experience">The 2025 Tundra gives you the freedom to adventure from wharf to mountains without worry. Whether you need a boat towed cross country, a horse float to the local trail, or have the trailer loaded up for a work haul, the Tundra can handle it. </p>
+                            <p className="experience">With a towing capacity of up to 5 tonne, the 2025 Tundra has the muscle to deliver big payloads with ease and confidence.</p>
                             <p className="experience">Put simply less worry, more fun, and all the bragging rights.</p>
                         </Container2>
                 </div>
@@ -454,7 +454,7 @@ const ExperienceTundraPage = () => {
                         }}
                     >
                         <Container ref={experience3}>
-                        <h1 className="experience">2024 TOYOTA TUNDRA</h1>
+                        <h1 className="experience">2025 TOYOTA TUNDRA</h1>
                         <p className="experience">Available now for pre-order in New Zealand -  exclusively from Glacier International.</p>
                         <StaticImage
                         src={`../images/experienceTundra/LastRe.jpg`}

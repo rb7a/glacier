@@ -477,7 +477,7 @@ useGSAP(
     
       <Layout title="Home | Glacier International" pageLocation={"/"}>
         <Helmet>
-            <title>2024 Toyota Sequoia & Tundra | Right Hand Drive Hybrid SUV</title>
+            <title>2025 Toyota Sequoia & Tundra | Right Hand Drive Hybrid SUV</title>
             <meta name='description' content='Glacier International is a one-stop shop importing Toyota Hybrid SUVs and remanufacturing right-hand drive Toyota Sequoia and Tundra models in New Zealand.' />
             <script type="application/ld+json">
                 {`
@@ -542,7 +542,7 @@ useGSAP(
                             },
                             "geo": {
                               "@type": "GeoCoordinates",
-                              "name": "2024 Toyota Sequoia & Tundra | Right Hand Drive Hybrid SUV",
+                              "name": "2025 Toyota Sequoia & Tundra | Right Hand Drive Hybrid SUV",
                               "postalCode": "9384",
                               "latitude": "-45.0541547",
                               "longitude": "169.1740818",
@@ -598,7 +598,7 @@ useGSAP(
                                       "name": "Experience Toyota Tundra & Sequoia",
                                       "@id": "https://www.glacier.nz/build-my-sequoia",
                                       "url": "https://www.glacier.nz/build-my-sequoia",
-                                      "description": "The 2024 Toyota Sequoia is the ideal hybrid SUV for luxury design, strength, and efficiency. Available for pre-order in NZ. Experience Toyota Sequoia Today!"
+                                      "description": "The 2025 Toyota Sequoia is the ideal hybrid SUV for luxury design, strength, and efficiency. Available for pre-order in NZ. Experience Toyota Sequoia Today!"
                                     }
                                   ]
                                 }
@@ -631,13 +631,13 @@ useGSAP(
                             "contentUrl": "https://www.glacier.nz/static/c6b4c8bd2fc905a29ac1fbb6fd240f23/ccd45/glacierLogo.webp",
                             "width": 1920,
                             "height": 1080,
-                            "caption": "2024 Toyota Sequoia & Tundra | Right Hand Drive Hybrid SUV"
+                            "caption": "2025 Toyota Sequoia & Tundra | Right Hand Drive Hybrid SUV"
                           },
                           "3": {
                             "@type": "WebPage",
                             "@id": "https://www.glacier.nz/#webpage",
                             "url": "https://www.glacier.nz/",
-                            "name": "2024 Toyota Sequoia & Tundra | Right Hand Drive Hybrid SUV",
+                            "name": "2025 Toyota Sequoia & Tundra | Right Hand Drive Hybrid SUV",
                             "isPartOf": {
                               "@id": "https://www.glacier.nz/#website"
                             },
@@ -695,12 +695,12 @@ useGSAP(
                           "6": {
                             "@type": "VideoObject",
                             "@id": "https://www.glacier.nz/#video",
-                            "name": "2024 Toyota Sequoia | Undeniable Capability, Unmistakable Presence | Toyota",
+                            "name": "2025 Toyota Sequoia | Undeniable Capability, Unmistakable Presence | Toyota",
                             "isPartOf": {
                               "@id": "https://www.glacier.nz/#webpage"
                             },
                             "thumbnailUrl": "https://youtu.be/P4I_Pus8Xc8?list=PLuYwryiueK-6dsfdxI1lQmeOX8mLf_9G0",
-                            "description": "Meet the all-new redesigned 2024 Toyota Sequoia. It’s striking in design and comfortable in character; get ready to move and be moved with every drive.",
+                            "description": "Meet the all-new redesigned 2025 Toyota Sequoia. It’s striking in design and comfortable in character; get ready to move and be moved with every drive.",
                             "uploadDate": "2022-01-26",
                             "width": 1920,
                             "height": 1080,
@@ -755,8 +755,8 @@ useGSAP(
          {/* Sequioa section */}
          <DisplaySection ref={text}>
             <div style={{textAlign:"center", padding: "20px"}}>
-                <h2>2024</h2>
-                <h1 className="animate-text1">2024 Toyota Hybrid Sequoia</h1>
+                <h2>2025</h2>
+                <h1 className="animate-text1">2025 Toyota Hybrid Sequoia</h1>
                 <p className="animate-text2">The ultimate luxury SUV in New Zealand. Imported, right-hand drive remanufactured, and modified to your needs, exclusively by the team at Glacier International.</p>
                 <p className="animate-text3">With their power, comes a superior towing capacity. With their hybrid technology comes fuel efficiency with enhanced torque. With their ability to take you from the beach to the mountains, in comfort like never before, comes a new drive for adventure. The new Sequoia Hybrid is unrivalled.</p>
                 <div className="animate-text4"><Button to="/experience-sequoia">Experience Sequoia</Button><ButtonOutline to="/build-my-sequoia">Build Your Sequoia</ButtonOutline></div>
@@ -775,8 +775,8 @@ useGSAP(
         {/* Tundra section */}
         <DisplaySection ref={text2}>
             <div style={{textAlign:"center", padding: "20px"}}>
-                <h2>2024</h2>
-                <h1 className="animate-text1">2024 Toyota Hybrid Tundra</h1>
+                <h2>2025</h2>
+                <h1 className="animate-text1">2025 Toyota Hybrid Tundra</h1>
                 <p className="animate-text2">Tough, chiselled with cutting-edge hybrid technology - the perfect truck for your off-road adventures, with an unbeatable towing capacity. Technical muscle first and foremost, the all-new Tundra has the best 4x4 capabilities of any UTE we know.</p>
                 <p className="animate-text3">Currently the safest truck on the planet. Powered with Toyota Safety Sense 2.5, you no longer have to worry about collisions. Toyota Tundra is your feature-laden friend for long drives or family adventures.</p>
                 <div className="animate-text4"><Button to="/experience-tundra">Experience Tundra</Button><ButtonOutline to="/build-my-tundra">Build Your Tundra</ButtonOutline></div>
