@@ -764,7 +764,7 @@ useGSAP(
         <div> 
             <StaticImage
                 className="sequoia-image"
-                src={`../images/homepageimages/sequoia-house.jpg`}
+                src={`../images/homepageimages/sequoiaplaceholder.jpg`}
                 alt="Sequoia Image"
                 style={{
                     height: "100%"
@@ -783,7 +783,7 @@ useGSAP(
             </div>
         <div> 
             <StaticImage
-                src={`../images/homepageimages/tundra-mud.jpg`}
+                src={`../images/homepageimages/tundra.jpg`}
                 className="tundra-image"
                 alt="Tundra Image"
                 style={{
